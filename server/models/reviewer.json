@@ -1,0 +1,27 @@
+{
+  "name": "reviewer",
+  "plural": "reviewers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "hotelreviews": {
+      "type": "hasMany",
+      "model": "hotelreview",
+      "foreignKey": "hotelreviewid",
+      "through": "hotelreview"
+    },
+    "image": {
+      "type": "hasMany",
+      "model": "image",
+      "foreignKey": "imageid",
+      "through": "image"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,41 @@
+{
+  "name": "hotelreview",
+  "plural": "hotelreviews",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number",
+      "required": true
+    },
+    "submittedAt": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "reviewerid": {
+      "type": "belongsTo",
+      "model": "reviewer",
+      "foreignKey": "reviewerid"
+    },
+    "images": {
+      "type": "hasMany",
+      "model": "image",
+      "foreignKey": "imageid"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
